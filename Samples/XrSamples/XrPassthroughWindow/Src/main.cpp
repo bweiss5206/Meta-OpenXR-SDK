@@ -1,11 +1,25 @@
 #include <OVR_Math.h>
 #include <XrApp.h>
 #include <Input/ControllerRenderer.h>
+#include <cstring>
 #include "XrPassthroughHelper.h"
 
 class XrPassthroughWindowApp : public OVRFW::XrApp {
 public:
     XrPassthroughWindowApp() = default;
+
+    bool AppInit(const xrJava* context) override {
+        bool ok = OVRFW::XrApp::AppInit(context);
+        if (!ok) {
+            return false;
+        }
+        if (ExtensionsArePresent(XrPassthroughHelper::RequiredExtensionNames())) {
+            passthrough_ = std::make_unique<XrPassthroughHelper>(GetInstance());
+        } else {
+            ALOGE("XR_FB_passthrough NOT supported on this runtime");
+        }
+        return true;
+    }
 
     std::vector<const char*> GetExtensions() override {
         std::vector<const char*> exts = XrApp::GetExtensions();
@@ -15,11 +29,29 @@ public:
         return exts;
     }
 
+    bool ExtensionsArePresent(const std::vector<const char*>& list) const {
+        const auto props = GetXrExtensionProperties();
+        for (const char* ext : list) {
+            bool found = false;
+            for (const auto& p : props) {
+                if (!strcmp(ext, p.extensionName)) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     bool SessionInit() override {
-        passthrough_ = std::make_unique<XrPassthroughHelper>(GetInstance());
-        passthrough_->SessionInit(GetSession());
-        layer_ = passthrough_->CreateProjectedLayer();
-        passthrough_->Start();
+        if (passthrough_) {
+            passthrough_->SessionInit(GetSession());
+            layer_ = passthrough_->CreateProjectedLayer();
+            passthrough_->Start();
+        }
 
         leftController_.Init(true);
         rightController_.Init(false);
@@ -30,14 +62,17 @@ public:
         leftController_.Shutdown();
         rightController_.Shutdown();
         if (passthrough_) {
-            passthrough_->DestroyLayer(layer_);
+            if (layer_ != XR_NULL_HANDLE) {
+                passthrough_->DestroyLayer(layer_);
+                layer_ = XR_NULL_HANDLE;
+            }
             passthrough_->SessionEnd();
             passthrough_.reset();
         }
     }
 
     void PreProjectionAddLayer(xrCompositorLayerUnion* layers, int& layerCount) override {
-        if (layer_ != XR_NULL_HANDLE) {
+        if (passthrough_ && layer_ != XR_NULL_HANDLE) {
             XrCompositionLayerPassthroughFB ptLayer{XR_TYPE_COMPOSITION_LAYER_PASSTHROUGH_FB};
             ptLayer.layerHandle = layer_;
             layers[layerCount++].Passthrough = ptLayer;
@@ -47,7 +82,9 @@ public:
     void Update(const OVRFW::ovrApplFrameIn& in) override {
         XrSpace space = GetCurrentSpace();
         XrTime time = ToXrTime(in.PredictedDisplayTime);
-        passthrough_->Update(space, time);
+        if (passthrough_) {
+            passthrough_->Update(space, time);
+        }
 
         OVR::Posef pose = in.HeadPose;
 
