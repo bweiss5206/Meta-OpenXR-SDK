@@ -1,0 +1,120 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.oculus.sdk.xrpassthroughwindow"
+4    android:installLocation="auto"
+5    android:versionCode="1"
+6    android:versionName="1.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="26"
+9-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml
+10        android:targetSdkVersion="32" />
+10-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml
+11
+12    <uses-feature
+12-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:8:3-76
+13        android:glEsVersion="0x00030001"
+13-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:8:17-49
+14        android:required="true" />
+14-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:8:50-73
+15    <uses-feature
+15-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:9:3-91
+16        android:name="android.hardware.vr.headtracking"
+16-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:9:17-64
+17        android:required="true" />
+17-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:9:65-88
+18    <uses-feature
+18-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:10:3-88
+19        android:name="oculus.software.handtracking"
+19-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:10:17-60
+20        android:required="false" />
+20-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:10:61-85
+21
+22    <uses-permission android:name="com.oculus.permission.HAND_TRACKING" />
+22-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:11:3-73
+22-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:11:20-70
+23    <uses-permission android:name="org.khronos.openxr.permission.OPENXR" />
+23-->[org.khronos.openxr:openxr_loader_for_android:1.1.46] C:\Users\Bailey's PC\.gradle\caches\transforms-3\a06f1f81c0a23a163ec8e732d6380a36\transformed\openxr_loader_for_android-1.1.46\AndroidManifest.xml:13:3-74
+23-->[org.khronos.openxr:openxr_loader_for_android:1.1.46] C:\Users\Bailey's PC\.gradle\caches\transforms-3\a06f1f81c0a23a163ec8e732d6380a36\transformed\openxr_loader_for_android-1.1.46\AndroidManifest.xml:13:20-71
+24    <uses-permission android:name="org.khronos.openxr.permission.OPENXR_SYSTEM" />
+24-->[org.khronos.openxr:openxr_loader_for_android:1.1.46] C:\Users\Bailey's PC\.gradle\caches\transforms-3\a06f1f81c0a23a163ec8e732d6380a36\transformed\openxr_loader_for_android-1.1.46\AndroidManifest.xml:14:3-81
+24-->[org.khronos.openxr:openxr_loader_for_android:1.1.46] C:\Users\Bailey's PC\.gradle\caches\transforms-3\a06f1f81c0a23a163ec8e732d6380a36\transformed\openxr_loader_for_android-1.1.46\AndroidManifest.xml:14:20-78
+25
+26    <queries>
+26-->[org.khronos.openxr:openxr_loader_for_android:1.1.46] C:\Users\Bailey's PC\.gradle\caches\transforms-3\a06f1f81c0a23a163ec8e732d6380a36\transformed\openxr_loader_for_android-1.1.46\AndroidManifest.xml:16:3-27:13
+27
+28        <!-- to talk to the broker -->
+29        <provider android:authorities="org.khronos.openxr.runtime_broker;org.khronos.openxr.system_runtime_broker" />
+29-->[org.khronos.openxr:openxr_loader_for_android:1.1.46] C:\Users\Bailey's PC\.gradle\caches\transforms-3\a06f1f81c0a23a163ec8e732d6380a36\transformed\openxr_loader_for_android-1.1.46\AndroidManifest.xml:18:5-114
+29-->[org.khronos.openxr:openxr_loader_for_android:1.1.46] C:\Users\Bailey's PC\.gradle\caches\transforms-3\a06f1f81c0a23a163ec8e732d6380a36\transformed\openxr_loader_for_android-1.1.46\AndroidManifest.xml:18:15-111
+30
+31        <!-- so client-side code of runtime/layers can talk to their service sides -->
+32        <intent>
+32-->[org.khronos.openxr:openxr_loader_for_android:1.1.46] C:\Users\Bailey's PC\.gradle\caches\transforms-3\a06f1f81c0a23a163ec8e732d6380a36\transformed\openxr_loader_for_android-1.1.46\AndroidManifest.xml:21:5-23:14
+33            <action android:name="org.khronos.openxr.OpenXRRuntimeService" />
+33-->[org.khronos.openxr:openxr_loader_for_android:1.1.46] C:\Users\Bailey's PC\.gradle\caches\transforms-3\a06f1f81c0a23a163ec8e732d6380a36\transformed\openxr_loader_for_android-1.1.46\AndroidManifest.xml:22:7-72
+33-->[org.khronos.openxr:openxr_loader_for_android:1.1.46] C:\Users\Bailey's PC\.gradle\caches\transforms-3\a06f1f81c0a23a163ec8e732d6380a36\transformed\openxr_loader_for_android-1.1.46\AndroidManifest.xml:22:15-69
+34        </intent>
+35        <intent>
+35-->[org.khronos.openxr:openxr_loader_for_android:1.1.46] C:\Users\Bailey's PC\.gradle\caches\transforms-3\a06f1f81c0a23a163ec8e732d6380a36\transformed\openxr_loader_for_android-1.1.46\AndroidManifest.xml:24:5-26:14
+36            <action android:name="org.khronos.openxr.OpenXRApiLayerService" />
+36-->[org.khronos.openxr:openxr_loader_for_android:1.1.46] C:\Users\Bailey's PC\.gradle\caches\transforms-3\a06f1f81c0a23a163ec8e732d6380a36\transformed\openxr_loader_for_android-1.1.46\AndroidManifest.xml:25:7-73
+36-->[org.khronos.openxr:openxr_loader_for_android:1.1.46] C:\Users\Bailey's PC\.gradle\caches\transforms-3\a06f1f81c0a23a163ec8e732d6380a36\transformed\openxr_loader_for_android-1.1.46\AndroidManifest.xml:25:15-70
+37        </intent>
+38    </queries>
+39
+40    <application
+40-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:12:3-29:17
+41        android:allowBackup="false"
+41-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:12:16-43
+42        android:debuggable="true"
+43        android:extractNativeLibs="false"
+44        android:label="@string/app_name" >
+44-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:12:44-76
+45        <meta-data
+45-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:13:5-81
+46            android:name="com.oculus.supportedDevices"
+46-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:13:16-58
+47            android:value="all" />
+47-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:13:59-78
+48
+49        <activity
+49-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:14:5-28:16
+50            android:name="com.oculus.sdk.xrpassthroughwindow.MainActivity"
+50-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:15:9-71
+51            android:configChanges="screenSize|screenLayout|orientation|keyboardHidden|keyboard|navigation|uiMode"
+51-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:20:9-110
+52            android:exported="true"
+52-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:21:9-32
+53            android:label="@string/app_name"
+53-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:17:9-41
+54            android:launchMode="singleTask"
+54-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:18:9-40
+55            android:screenOrientation="landscape"
+55-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:19:9-46
+56            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+56-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:16:9-73
+57            <meta-data
+57-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:22:7-92
+58                android:name="android.app.lib_name"
+58-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:22:18-53
+59                android:value="xrpassthroughwindow" />
+59-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:22:54-89
+60
+61            <intent-filter>
+61-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:23:7-27:23
+62                <action android:name="android.intent.action.MAIN" />
+62-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:24:9-61
+62-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:24:17-58
+63
+64                <category android:name="org.khronos.openxr.intent.category.IMMERSIVE_HMD" />
+64-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:25:9-85
+64-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:25:19-82
+65                <category android:name="android.intent.category.LAUNCHER" />
+65-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:26:9-69
+65-->C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\AndroidManifest.xml:26:19-66
+66            </intent-filter>
+67        </activity>
+68    </application>
+69
+70</manifest>

@@ -5,3 +5,4 @@ The sample requires a headset with the `XR_FB_passthrough` extension (Quest runt
 
 The Gradle wrapper JAR is intentionally omitted from version control. Running
 `./gradlew` in the Android project directory will download the required wrapper files automatically.
+

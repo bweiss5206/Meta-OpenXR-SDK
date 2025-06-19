@@ -1,8 +1,10 @@
 #include <OVR_Math.h>
 #include <XrApp.h>
 #include <Input/ControllerRenderer.h>
-#include <cstring>
+#include <Render/GeometryRenderer.h>
 #include "XrPassthroughHelper.h"
+#include <algorithm>
+
 
 class XrPassthroughWindowApp : public OVRFW::XrApp {
 public:
@@ -28,6 +30,7 @@ public:
         }
         return exts;
     }
+
 
     bool ExtensionsArePresent(const std::vector<const char*>& list) const {
         const auto props = GetXrExtensionProperties();
@@ -55,10 +58,12 @@ public:
 
         leftController_.Init(true);
         rightController_.Init(false);
+
         return true;
     }
 
     void SessionEnd() override {
+
         leftController_.Shutdown();
         rightController_.Shutdown();
         if (passthrough_) {
@@ -66,6 +71,7 @@ public:
                 passthrough_->DestroyLayer(layer_);
                 layer_ = XR_NULL_HANDLE;
             }
+
             passthrough_->SessionEnd();
             passthrough_.reset();
         }
@@ -73,6 +79,7 @@ public:
 
     void PreProjectionAddLayer(xrCompositorLayerUnion* layers, int& layerCount) override {
         if (passthrough_ && layer_ != XR_NULL_HANDLE) {
+
             XrCompositionLayerPassthroughFB ptLayer{XR_TYPE_COMPOSITION_LAYER_PASSTHROUGH_FB};
             ptLayer.layerHandle = layer_;
             layers[layerCount++].Passthrough = ptLayer;
@@ -82,6 +89,7 @@ public:
     void Update(const OVRFW::ovrApplFrameIn& in) override {
         XrSpace space = GetCurrentSpace();
         XrTime time = ToXrTime(in.PredictedDisplayTime);
+
         if (passthrough_) {
             passthrough_->Update(space, time);
         }
@@ -97,6 +105,7 @@ public:
     }
 
     void Render(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRendererOutput& out) override {
+
         if (in.LeftRemoteTracked) {
             leftController_.Render(out.Surfaces);
         }
