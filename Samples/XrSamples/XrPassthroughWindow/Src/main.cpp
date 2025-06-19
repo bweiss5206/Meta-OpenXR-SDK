@@ -1,6 +1,7 @@
 #include <OVR_Math.h>
 #include <XrApp.h>
 #include <Input/ControllerRenderer.h>
+#include <Input/TinyUI.h>
 #include <cstring>
 #include "XrPassthroughHelper.h"
 
@@ -46,6 +47,20 @@ public:
         return true;
     }
 
+    void InitializeUI() {
+        if (uiInitialized_) {
+            return;
+        }
+        uiInitialized_ = ui_.Init(GetContext(), GetFileSys());
+        if (!uiInitialized_) {
+            ALOGE("TinyUI::Init FAILED.");
+            return;
+        }
+        windowObject_ = ui_.AddLabel("", {0.0f, 0.0f, -1.5f}, {400.0f, 300.0f});
+        ui_.AddSlider("Size", {-0.4f, -0.6f, -1.5f}, &windowScale_, 1.0f, 0.1f, 0.5f, 2.0f);
+        ui_.AddSlider("Alpha", {0.4f, -0.6f, -1.5f}, &windowAlpha_, 1.0f, 0.05f, 0.0f, 1.0f);
+    }
+
     bool SessionInit() override {
         if (passthrough_) {
             passthrough_->SessionInit(GetSession());
@@ -55,6 +70,8 @@ public:
 
         leftController_.Init(true);
         rightController_.Init(false);
+
+        InitializeUI();
         return true;
     }
 
@@ -68,6 +85,11 @@ public:
             }
             passthrough_->SessionEnd();
             passthrough_.reset();
+        }
+        if (uiInitialized_) {
+            ui_.Shutdown();
+            uiInitialized_ = false;
+            windowObject_ = nullptr;
         }
     }
 
@@ -94,6 +116,21 @@ public:
         if (in.RightRemoteTracked) {
             rightController_.Update(in.RightRemotePose);
         }
+
+        if (windowObject_) {
+            windowObject_->SetSurfaceDims(0, {400.0f * windowScale_, 300.0f * windowScale_});
+            windowObject_->RegenerateSurfaceGeometry(0, false);
+            windowObject_->SetSurfaceColor(0, {0.1f, 0.1f, 0.1f, windowAlpha_});
+        }
+
+        ui_.HitTestDevices().clear();
+        if (in.LeftRemoteTracked) {
+            ui_.AddHitTestRay(in.LeftRemotePointPose, in.LeftRemoteIndexTrigger > 0.25f);
+        }
+        if (in.RightRemoteTracked) {
+            ui_.AddHitTestRay(in.RightRemotePointPose, in.RightRemoteIndexTrigger > 0.25f);
+        }
+        ui_.Update(in);
     }
 
     void Render(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRendererOutput& out) override {
@@ -103,6 +140,7 @@ public:
         if (in.RightRemoteTracked) {
             rightController_.Render(out.Surfaces);
         }
+        ui_.Render(in, out);
     }
 
 private:
@@ -110,6 +148,12 @@ private:
     XrPassthroughLayerFB layer_ = XR_NULL_HANDLE;
     OVRFW::ControllerRenderer leftController_;
     OVRFW::ControllerRenderer rightController_;
+
+    bool uiInitialized_ = false;
+    OVRFW::TinyUI ui_;
+    OVRFW::VRMenuObject* windowObject_ = nullptr;
+    float windowScale_ = 1.0f;
+    float windowAlpha_ = 1.0f;
 };
 
 ENTRY_POINT(XrPassthroughWindowApp)
