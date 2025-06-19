@@ -1,0 +1,1 @@
+C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\build\intermediates\cxx\Debug\2p5m613d\obj\arm64-v8a
