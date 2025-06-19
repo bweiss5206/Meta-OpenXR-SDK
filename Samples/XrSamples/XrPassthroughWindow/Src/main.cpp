@@ -3,6 +3,7 @@
 #include <Input/ControllerRenderer.h>
 #include <Render/GeometryRenderer.h>
 #include "XrPassthroughHelper.h"
+#include <algorithm>
 
 class XrPassthroughWindowApp : public OVRFW::XrApp {
 public:
@@ -65,9 +66,9 @@ public:
         }
 
         scale_ += in.RightRemoteJoystick.y * 0.01f;
-        scale_ = OVR::Alg::Clamp(scale_, 0.2f, 3.0f);
+        scale_ = std::clamp(scale_, 0.2f, 3.0f);
         alpha_ += in.RightRemoteJoystick.x * 0.01f;
-        alpha_ = OVR::Alg::Clamp(alpha_, 0.0f, 1.0f);
+        alpha_ = std::clamp(alpha_, 0.0f, 1.0f);
 
         OVR::Posef pose = in.HeadPose * OVR::Posef(OVR::Quatf(), {0.0f, 0.0f, -1.5f});
         quad_.SetPose(pose);

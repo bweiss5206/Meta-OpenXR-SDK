@@ -1,0 +1,7 @@
+Executable : C:\Android\sdk\cmake\3.10.2.4988404\bin\ninja.exe
+arguments : 
+-C
+C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\.cxx\Debug\2p5m613d\arm64-v8a
+xrpassthroughwindow
+jvmArgs : 
+

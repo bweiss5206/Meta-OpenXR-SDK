@@ -1,0 +1,10 @@
+# ninja log v5
+0	152	771992472	SampleXrFramework/CMakeFiles/app_glue.dir/C_/Android/sdk/ndk/21.4.7075529/sources/android/native_app_glue/android_native_app_glue.c.o	df763c78fe3b2162
+153	316	771992473	SampleXrFramework/libapp_glue.a	8a6a16136e3bd2eb
+9	366	771992473	XrSamples/XrPassthrough/CMakeFiles/xrpassthrough.dir/Src/XrPassthroughInput.cpp.o	5b8a851bf259c1e3
+3	436	771992473	XrSamples/XrPassthrough/CMakeFiles/xrpassthrough.dir/Src/XrPassthrough.cpp.o	cf619d4cea7e4508
+6	478	771992473	XrSamples/XrPassthrough/CMakeFiles/xrpassthrough.dir/Src/XrPassthroughGl.cpp.o	154785593b9380b1
+479	555	771992473	../../../../build/intermediates/cxx/Debug/4b3n3p1d/obj/arm64-v8a/libxrpassthrough.so	b56f5a8b171fa2a6
+2	339	771992495	XrSamples/XrPassthrough/CMakeFiles/xrpassthrough.dir/Src/XrPassthroughInput.cpp.o	5b8a851bf259c1e3
+5	403	771992495	XrSamples/XrPassthrough/CMakeFiles/xrpassthrough.dir/Src/XrPassthrough.cpp.o	cf619d4cea7e4508
+403	480	771992495	../../../../build/intermediates/cxx/Debug/4b3n3p1d/obj/arm64-v8a/libxrpassthrough.so	b56f5a8b171fa2a6
