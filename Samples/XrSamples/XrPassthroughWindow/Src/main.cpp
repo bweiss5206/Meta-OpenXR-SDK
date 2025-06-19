@@ -5,6 +5,7 @@
 #include "XrPassthroughHelper.h"
 #include <algorithm>
 
+
 class XrPassthroughWindowApp : public OVRFW::XrApp {
 public:
     XrPassthroughWindowApp() = default;
