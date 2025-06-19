@@ -1,86 +1,9 @@
 ninja: Entering directory `C:\dev\Meta-OpenXR-SDK\Samples\XrSamples\XrPassthroughWindow\Projects\Android\.cxx\Debug\2p5m613d\arm64-v8a'
-[1/85] Building C object 3rdParty/CMakeFiles/minizip.dir/minizip/src/ioapi.c.o
-[2/85] Building C object 3rdParty/CMakeFiles/stb.dir/stb/src/stb_image_write.c.o
-[3/85] Building C object SampleXrFramework/CMakeFiles/app_glue.dir/C_/Android/sdk/ndk/21.4.7075529/sources/android/native_app_glue/android_native_app_glue.c.o
-[4/85] Building C object 3rdParty/CMakeFiles/minizip.dir/minizip/src/miniunz.c.o
-[5/85] Building C object 3rdParty/CMakeFiles/minizip.dir/minizip/src/unzip.c.o
-[6/85] Building C object 3rdParty/CMakeFiles/minizip.dir/minizip/src/mztools.c.o
-[7/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/Fader.cpp.o
-[8/85] Building C object 3rdParty/CMakeFiles/stb.dir/stb/src/stb_vorbis.c.o
-[9/85] Building C object 3rdParty/CMakeFiles/minizip.dir/minizip/src/zip.c.o
-[10/85] Building C object 3rdParty/CMakeFiles/stb.dir/stb/src/stb_image.c.o
-[11/85] Linking C static library SampleXrFramework\libapp_glue.a
-[12/85] Linking C static library 3rdParty\libminizip.a
-[13/85] Linking C static library 3rdParty\libstb.a
-[14/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/CollisionPrimitive.cpp.o
-[15/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/AnimComponents.cpp.o
-[16/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/DefaultComponent.cpp.o
-[17/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/Reflection.cpp.o
-[18/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/ActionComponents.cpp.o
-[19/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/SoundLimiter.cpp.o
-[20/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/VRMenuComponent.cpp.o
-[21/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/VRMenuEvent.cpp.o
-[22/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/GazeCursor.cpp.o
-[23/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/ReflectionData.cpp.o
-[24/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/VRMenu.cpp.o
-[25/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/VRMenuEventHandler.cpp.o
-[26/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Input/ArmModel.cpp.o
-[27/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Locale/tinyxml2.cpp.o
-[28/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/VRMenuMgr.cpp.o
-[29/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/GuiSys.cpp.o
-[30/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Input/AxisRenderer.cpp.o
-[31/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Input/Skeleton.cpp.o
-[32/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Input/SkeletonRenderer.cpp.o
-[33/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Model/ModelAnimationUtils.cpp.o
-[34/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Input/ControllerRenderer.cpp.o
-[35/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Input/HandMaskRenderer.cpp.o
-[36/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/VRMenuObject.cpp.o
-[37/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/OVR_FileSys.cpp.o
-[38/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/OVR_MappedFile.cpp.o
-[39/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Input/HandRenderer.cpp.o
-[40/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Model/ModelTrace.cpp.o
-[41/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/OVR_UTF8Util.cpp.o
-[42/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/OVR_Uri.cpp.o
-[43/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Model/ModelCollision.cpp.o
-[44/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Locale/OVR_Locale.cpp.o
-[45/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/OVR_BinaryFile2.cpp.o
-[46/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/GlBuffer.cpp.o
-[47/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/GUI/MetaDataManager.cpp.o
-[48/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/EaseFunctions.cpp.o
-[49/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Model/ModelRender.cpp.o
-[50/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Model/SceneView.cpp.o
-[51/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/PackageFiles.cpp.o
-[52/85] Building C object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Misc/Log.c.o
-[53/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/OVR_Lexer2.cpp.o
-[54/85] Building C object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/Egl.c.o
-[55/85] Building C object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/GlWrapperWin32.c.o
-[56/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/BeamRenderer.cpp.o
-[57/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/System.cpp.o
-[58/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/OVR_Stream.cpp.o
-[59/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/GeometryRenderer.cpp.o
-[60/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/Framebuffer.cpp.o
-[61/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/GeometryBuilder.cpp.o
-[62/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Model/ModelFile.cpp.o
-[63/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/BillBoardRenderer.cpp.o
-[64/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/DebugLines.cpp.o
-[65/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/GlGeometry.cpp.o
-[66/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/TextureAtlas.cpp.o
-[67/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/GlProgram.cpp.o
-[68/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/PointList.cpp.o
-[69/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Input/TinyUI.cpp.o
-[70/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Model/ModelFile_OvrScene.cpp.o
-[71/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/TextureManager.cpp.o
-[72/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/SurfaceTexture.cpp.o
-[73/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/Ribbon.cpp.o
-[74/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/PanelRenderer.cpp.o
-[75/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/SimpleGlbRenderer.cpp.o
-[76/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/SurfaceRender.cpp.o
-[77/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/ParticleSystem.cpp.o
-[78/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/GlTexture.cpp.o
-[79/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/BitmapFont.cpp.o
-[80/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Model/ModelFile_glTF.cpp.o
-[81/85] Building CXX object XrSamples/XrPassthroughWindow/CMakeFiles/xrpassthroughwindow.dir/Src/XrPassthroughHelper.cpp.o
-[82/85] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/XrApp.cpp.o
-[83/85] Building CXX object XrSamples/XrPassthroughWindow/CMakeFiles/xrpassthroughwindow.dir/Src/main.cpp.o
-[84/85] Linking CXX static library SampleXrFramework\libsamplexrframework.a
-[85/85] Linking CXX shared module ..\..\..\..\build\intermediates\cxx\Debug\2p5m613d\obj\arm64-v8a\libxrpassthroughwindow.so
+[1/8] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Render/Framebuffer.cpp.o
+[2/8] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Input/HandMaskRenderer.cpp.o
+[3/8] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/Input/HandRenderer.cpp.o
+[4/8] Building CXX object XrSamples/XrPassthroughWindow/CMakeFiles/xrpassthroughwindow.dir/Src/XrPassthroughHelper.cpp.o
+[5/8] Building CXX object XrSamples/XrPassthroughWindow/CMakeFiles/xrpassthroughwindow.dir/Src/main.cpp.o
+[6/8] Building CXX object SampleXrFramework/CMakeFiles/samplexrframework.dir/Src/XrApp.cpp.o
+[7/8] Linking CXX static library SampleXrFramework\libsamplexrframework.a
+[8/8] Linking CXX shared module ..\..\..\..\build\intermediates\cxx\Debug\2p5m613d\obj\arm64-v8a\libxrpassthroughwindow.so

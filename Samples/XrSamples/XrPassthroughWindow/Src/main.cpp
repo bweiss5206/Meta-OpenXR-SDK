@@ -94,7 +94,6 @@ public:
             passthrough_->Update(space, time);
         }
 
-        OVR::Posef pose = in.HeadPose;
 
         if (in.LeftRemoteTracked) {
             leftController_.Update(in.LeftRemotePose);
