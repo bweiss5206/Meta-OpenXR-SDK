@@ -1,0 +1,3 @@
+gradlew merge=ours
+gradlew.bat merge=ours
+gradle/wrapper/* merge=ours
