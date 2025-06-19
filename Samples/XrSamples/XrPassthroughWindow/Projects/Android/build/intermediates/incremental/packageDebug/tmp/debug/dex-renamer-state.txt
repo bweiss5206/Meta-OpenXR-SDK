@@ -1,0 +1,7 @@
+#Wed Jun 18 22:09:28 EDT 2025
+base.1=C\:\\dev\\Meta-OpenXR-SDK\\Samples\\XrSamples\\XrPassthroughWindow\\Projects\\Android\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+path.1=7/classes.dex
+base.0=C\:\\dev\\Meta-OpenXR-SDK\\Samples\\XrSamples\\XrPassthroughWindow\\Projects\\Android\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=0/classes.dex
